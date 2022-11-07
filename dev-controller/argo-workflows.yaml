@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: argo
+  project: dev
   source:
     path: argo-workflows/overlays/dev
     repoURL: https://github.com/audryus/gitops-argo
