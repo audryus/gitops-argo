@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: dev
+  project: argo
   source:
     repoURL: 'https://argoproj.github.io/argo-helm'
     targetRevision: 0.20.6
