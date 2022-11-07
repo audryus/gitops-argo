@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: argo-cert
-  namespace: gitea
+  namespace: argo
 spec:
   secretName: argo-tls-secret
   issuerRef:
