@@ -6,4 +6,4 @@ resources:
 - traefik-mdw-redirecttohttps.yaml
 - cert.yaml
 - ingress.yaml
-namespace: gitea
+namespace: argo
