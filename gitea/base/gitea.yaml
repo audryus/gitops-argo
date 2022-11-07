@@ -23,7 +23,7 @@ spec:
           value: git.audryus.arpa
         - name: 'ingress.tls[0].secretName'
           value: 'chart-example-tls'
-  project: dev
+  project: gitea
   syncPolicy:
     automated:
       prune: true
