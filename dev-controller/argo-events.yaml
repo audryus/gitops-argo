@@ -8,16 +8,18 @@ metadata:
 spec:
   project: argo
   source:
-    path: charts/argo-events
-    repoURL: https://github.com/argoproj/argo-helm.git
-    targetRevision: HEAD
+    repoURL: 'https://argoproj.github.io/argo-helm'
+    targetRevision: 2.0.6
+    chart: argo-events
   destination:
+    server: 'https://kubernetes.default.svc'
     namespace: argo-events
-    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
-      selfHeal: true
       prune: true
+      selfHeal: true
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
+
+
 
