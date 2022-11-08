@@ -13,7 +13,7 @@ spec:
   source:
     path: ''
     repoURL: 'https://releases.rancher.com/server-charts/latest'
-    targetRevision: 2.7.0-rc9
+    targetRevision: 2.6.9
     helm:
       values: |
         hostname: rancher.audryus.arpa
