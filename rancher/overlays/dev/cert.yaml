@@ -4,7 +4,7 @@ metadata:
   name: tls-rancher-ingress
   namespace: cattle-system
 spec:
-  secretName: tls-rancher-ingress
+  secretName: tls-rancher
   issuerRef:
     name: cluster-issuer
     kind: ClusterIssuer

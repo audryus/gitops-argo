@@ -16,8 +16,8 @@ spec:
     targetRevision: 2.6.9
     helm:
       values: |
+        ingress.enabled: false
         hostname: rancher.audryus.arpa
-        ingress.extraAnnotations.'cert-manager\.io/cluster-issuer': cluster-issuer
         replicas: 1
     chart: rancher
   project: rancher
