@@ -15,10 +15,17 @@ spec:
     repoURL: 'https://releases.rancher.com/server-charts/latest'
     targetRevision: 2.6.9
     helm:
-      values: |
-        ingress.enabled: false
-        hostname: rancher.audryus.arpa
-        replicas: 1
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: ingress.enabled
+          value: 'false'
+        - name: replicas
+          value: '1'
+        - name: tls
+          value: external
+        - name: ingress.tls.source
+          value: secret
     chart: rancher
   project: rancher
   syncPolicy:

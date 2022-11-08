@@ -11,8 +11,8 @@ spec:
       match: Host(`rancher.audryus.arpa`)
       services:
         - name: rancher
-          port: 443
-          scheme: https
+          port: 80
+          scheme: http
   tls:
     secretName: tls-rancher
 ---
