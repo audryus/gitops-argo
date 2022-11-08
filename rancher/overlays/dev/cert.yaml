@@ -1,10 +1,10 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: rancher-cert
+  name: tls-rancher-ingress
   namespace: cattle-system
 spec:
-  secretName: tls-rancher
+  secretName: tls-rancher-ingress
   issuerRef:
     name: cluster-issuer
     kind: ClusterIssuer
