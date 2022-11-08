@@ -16,8 +16,8 @@ spec:
     targetRevision: 2.7.0-rc9
     helm:
       values: |
-        hostname=rancher.audryus.arpa
-        ingress.extraAnnotations.'cert-manager\.io/cluster-issuer'=cluster-issuer
+        hostname: rancher.audryus.arpa
+        ingress.extraAnnotations.'cert-manager\.io/cluster-issuer': cluster-issuer
     chart: rancher
   project: rancher
   syncPolicy:
