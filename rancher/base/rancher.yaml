@@ -18,6 +18,7 @@ spec:
       values: |
         hostname: rancher.audryus.arpa
         ingress.extraAnnotations.'cert-manager\.io/cluster-issuer': cluster-issuer
+        replicas: 1
     chart: rancher
   project: rancher
   syncPolicy:
