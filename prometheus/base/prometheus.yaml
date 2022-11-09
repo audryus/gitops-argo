@@ -1,21 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometheus-app
+  name: prometheus
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: dev
+  project: prometheus
   source:
-    path: prometheus/overlays/dev
-    repoURL: https://github.com/audryus/gitops-argo
+    path: charts/prometheus
+    repoURL: https://github.com/prometheus-community/helm-charts.git
     targetRevision: HEAD
   destination:
-    namespace: argocd
+    namespace: monitoring
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
-
+    syncOptions:
+    - CreateNamespace=true

@@ -1,0 +1,36 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: prometheus
+  namespace: monitoring
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`prometheus.audryus.arpa`)
+      services:
+        - name: prometheus-server
+          port: 80
+          scheme: http
+  tls:
+    secretName: tls-prometheus
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: prometheus-http
+  namespace: monitoring
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`prometheus.audryus.arpa`)
+      priority: 10
+      services:
+        - name: prometheus-server
+          port: 80
+          scheme: http
+      middlewares:
+        - name: redirecttohttps
