@@ -8,7 +8,7 @@ metadata:
 spec:
   project: linkerd
   source:
-    path: linkerd
+    path: linkerd/overlays/dev
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:
