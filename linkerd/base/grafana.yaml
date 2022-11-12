@@ -14,7 +14,7 @@ spec:
     chart: grafana
     helm:
       valueFiles:
-        - https://raw.githubusercontent.com/linkerd/linkerd2/main/grafana/values.yaml
+        - https://raw.githubusercontent.com/audryus/gitops-argo/trunk/linkerd/base/values.yaml
   project: linkerd
   syncPolicy:
     automated:
