@@ -1,21 +1,21 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: rancher-app
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  project: dev
-  source:
-    path: rancher/overlays/dev
-    repoURL: https://github.com/audryus/gitops-argo
-    targetRevision: HEAD
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  syncPolicy:
-    automated:
-      selfHeal: true
-      prune: true
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: rancher-app
+#  namespace: argocd
+#  finalizers:
+#    - resources-finalizer.argocd.argoproj.io
+#spec:
+#  project: dev
+#  source:
+#    path: rancher/overlays/dev
+#    repoURL: https://github.com/audryus/gitops-argo
+#    targetRevision: HEAD
+#  destination:
+#    namespace: argocd
+#    server: https://kubernetes.default.svc
+#  syncPolicy:
+#    automated:
+#      selfHeal: true
+#      prune: true
 
