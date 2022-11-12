@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jaeger
+spec:
+  destination:
+    name: ''
+    namespace: linkerd-jaeger
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://helm.linkerd.io/stable'
+    targetRevision: 30.4.4
+    chart: linkerd-jaeger
+  project: linkerd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
