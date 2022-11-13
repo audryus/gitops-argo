@@ -1,0 +1,36 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: silly-app
+  namespace: silly-app
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`apps.audryus.arpa`) && PathPrefix(`/silly-app`) 
+      services:
+        - name: silly-app
+          port: 8080
+          scheme: http
+  tls:
+    secretName: tls-apps
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: silly-app-http
+  namespace: silly-app
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`apps.audryus.arpa`) && PathPrefix(`/silly-app`) 
+      priority: 10
+      services:
+        - name: silly-app
+          port: 8080
+          scheme: http
+      middlewares:
+        - name: redirecttohttps
