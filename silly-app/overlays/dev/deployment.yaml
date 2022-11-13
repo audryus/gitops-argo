@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: silly-app
-        image: audryus/silly-app
+        image: audryus/silly-app:1.0
         ports:
         - containerPort: 8080
         livenessProbe:

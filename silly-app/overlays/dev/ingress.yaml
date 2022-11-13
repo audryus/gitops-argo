@@ -13,6 +13,8 @@ spec:
         - name: silly-app
           port: 8080
           scheme: http
+      middlewares:
+        - name: strip-prefix
   tls:
     secretName: tls-apps
 ---
@@ -34,3 +36,4 @@ spec:
           scheme: http
       middlewares:
         - name: redirecttohttps
+          

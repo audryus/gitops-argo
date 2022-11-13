@@ -4,6 +4,7 @@ resources:
 - ../../base
 - namespace.yaml
 - traefik-mdw-redirecttohttps.yaml
+- traefik-mdw-stripprefix.yaml
 - cert.yaml
 - ingress.yaml
 - deployment.yaml
