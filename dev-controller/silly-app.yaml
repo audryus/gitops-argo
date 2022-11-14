@@ -1,6 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: silly-app=audryus/silly-app
+    argocd-image-updater.argoproj.io/silly-app.update-strategy: semver
+    argocd-image-updater.argoproj.io/silly-app.force-update: "true"
   name: silly-app
   namespace: argocd
   finalizers:
@@ -11,9 +15,6 @@ spec:
     path: silly-app/overlays/dev
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
-    kustomize:
-      images:
-      - audryus/silly-app:1.0
   destination:
     server: https://kubernetes.default.svc
     namespace: silly-app
