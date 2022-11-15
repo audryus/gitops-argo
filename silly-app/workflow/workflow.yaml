@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: ubiquitous-spoon
+  namespace: argo
+spec:
+  entrypoint: build
+  volumes:
+    - name: docker-config
+      secret:
+        secretName: docker-config
+        items:
+          - key: "config.json"
+            path: config.json
+  templates:
+    - name: build
+      dag:
+        tasks:
+        - name: build
+          templateRef:
+            name: container-image
+            template: build-kaniko-git
+            clusterScope: true
+          arguments:
+            parameters:
+            - name: repo_url
+              value: "git://github.com/audryus/ubiquitous-spoon.git"
+            - name: container_image
+              value: audryus/silly-app
+            - name: container_tag
+              value: "1.3"

@@ -6,20 +6,16 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: argo
+  project: dev
   source:
-    repoURL: 'https://argoproj.github.io/argo-helm'
-    targetRevision: 2.0.6
-    chart: argo-events
+    path: argo-events
+    repoURL: https://github.com/audryus/gitops-argo
+    targetRevision: HEAD
   destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: argo-events
+    namespace: argocd
+    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
-      prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-
-
+      prune: true
 
