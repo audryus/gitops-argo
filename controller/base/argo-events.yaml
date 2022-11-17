@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-image-updater
+  name: argo-events
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: argo
   source:
-    path: argo-image-updater
+    path: argo-events
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:

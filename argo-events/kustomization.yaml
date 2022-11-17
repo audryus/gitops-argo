@@ -6,5 +6,5 @@ resources:
 - https://raw.githubusercontent.com/argoproj/argo-events/master/examples/rbac/sensor-rbac.yaml
 - https://raw.githubusercontent.com/argoproj/argo-events/master/examples/rbac/workflow-rbac.yaml
 bases:
-- github.com/argoproj/argo-events/manifests/cluster-install
+- github.com/argoproj/argo-events/manifests/namespace-install
 
