@@ -5,6 +5,7 @@ resources:
 - https://raw.githubusercontent.com/argoproj/argo-events/stable/examples/eventbus/native.yaml
 - https://raw.githubusercontent.com/argoproj/argo-events/master/examples/rbac/sensor-rbac.yaml
 - https://raw.githubusercontent.com/argoproj/argo-events/master/examples/rbac/workflow-rbac.yaml
+- templates.yaml
 bases:
 - github.com/argoproj/argo-events/manifests/namespace-install
 
