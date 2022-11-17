@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
   name: ubiquitous-spoon
+  namespace: argo-events
 spec:
   entrypoint: build
   volumes:

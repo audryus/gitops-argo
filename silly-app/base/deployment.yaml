@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: silly-app
+  namespace: silly-app
   labels:
     app: silly-app
 spec:
