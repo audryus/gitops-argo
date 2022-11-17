@@ -8,7 +8,7 @@ metadata:
 spec:
   project: argo
   source:
-    path: argo-workflows/overlays/dev
+    path: argo-workflows
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:
