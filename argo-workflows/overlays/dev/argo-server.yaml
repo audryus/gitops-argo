@@ -9,8 +9,8 @@ spec:
       containers:
       - args:
         - server
-        - 'auth-mode=server'
-        - '--insecure'
+        - '--auth-mode=server'
+        - '--secure=false'
         env: []
         image: quay.io/argoproj/argocli:v3.4.3
         name: argo-server
