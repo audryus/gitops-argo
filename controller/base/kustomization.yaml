@@ -5,3 +5,4 @@ resources:
 - argo-workflows.yaml
 - argo-events.yaml
 - sealed-secrets.yaml
+- linkerd.yaml
