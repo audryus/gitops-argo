@@ -1,0 +1,21 @@
+{
+  "kind": "SealedSecret",
+  "apiVersion": "bitnami.com/v1alpha1",
+  "metadata": {
+    "name": "docker-config",
+    "namespace": "argo",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "name": "docker-config",
+        "namespace": "argo",
+        "creationTimestamp": null
+      }
+    },
+    "encryptedData": {
+      "config.json": "AgCLg8HAGr9He+bwEmGpMjdsIgmOkh0aGD+TMeOhpvyScSP3oBjXn4HNs01f9aFI8zGlbmMm7fAUVPPP3Vfyi+dEeWNFXZhjBbiwrkq88cHGX95LvT5Sni3XT/0c5AmrgbNu1f3SfSlRASUUPJeifjKE/vk/ndYPhnUKWfmYkceCscEzmv+keEOoCMVzc0Q2D7hdVhls6+lTOmVPHYli5tlk7PBkIIz3X/ULdZSrIO1ALdrngCc6v9VOYUUnnNKYOtrvdI0MPzffKmwZ1cna6IGRqzKW4qTjhpWJRNV9bfu2qYvLhqx1n8DrY7tY7maduaIB2CA8GBAykb/tc7RZ0AOW0UVP3R6xCspDwv1ZF1t5gexT6B25j1UdyjI7gNyYJq8QiX6hqKG8QsQXwY4ZWqtH4ZIhOcGv25pS5qQTN1KDfUU29jz0phfhrZKzX42mVEOqCedhCCEurYKbL0trEopq9ouNp/BPxWh5wfXreSDZSJUxfoRE+qrzElideihJ6J+v25Bnu5o7a9opGRNbTIyKxYxBu+RAhYpIamX0gLuVqiJ47ABeCTfOjHj9Si0qPuQwZCJVGYtoeXl9rthy/GqkTZKY91OI/kOi7OXwB76BCdK9h53gnhcgOhnSJVvN17xEN+WAKS/lgDo6PLhsRWyjxJIoL90MtUFkY45sWrCZGo4XEOQfRr5rL7ETm1LFs8HXaVoj45Dk4/z2hsHmRChexasmocL+hmoV8IbInQq/Zt3QloeHJy/du+Km4CJEC/JRytNaQE2Z49s/yzyPc4cKjOPn23dMI/pwS2Bo57NlxCn4sIq4+bq1m6eG69R81aDIm71VjgAXumGSXeAiyedZxrc1EQ=="
+    }
+  }
+}
