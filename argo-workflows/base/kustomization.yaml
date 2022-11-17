@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
 - namespace.yaml
 bases:
-- github.com/argoproj/argo-workflows/releases/download/v3.4.3/install.yaml
+- http://github.com/argoproj/argo-workflows/releases/download/v3.4.3/install.yaml
 patchesStrategicMerge:
 - argo-server.yaml
