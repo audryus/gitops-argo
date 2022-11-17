@@ -2,7 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
   name: webhook
-  namespace: argo
 spec:
   template:
     serviceAccountName: operate-workflow-sa
@@ -29,5 +28,5 @@ spec:
                         tasks:
                         - name: build
                           templateRef:
-                            name: omniscient-bear
+                            name: delightful-python
                             template: argosay

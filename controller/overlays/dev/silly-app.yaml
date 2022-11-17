@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: silly-app=audryus/silly-app
+    argocd-image-updater.argoproj.io/silly-app.update-strategy: semver
+    argocd-image-updater.argoproj.io/silly-app.force-update: "true"
+  name: silly-app
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: application
+  source:
+    path: silly-app/overlays/dev
+    repoURL: https://github.com/audryus/gitops-argo
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: silly-app
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true

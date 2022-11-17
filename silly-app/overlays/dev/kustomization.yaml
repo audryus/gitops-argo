@@ -7,4 +7,5 @@ resources:
 - traefik-mdw-stripprefix.yaml
 - cert.yaml
 - ingress.yaml
+- ../../workflow
 namespace: silly-app
