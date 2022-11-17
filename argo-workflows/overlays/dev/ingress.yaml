@@ -10,7 +10,7 @@ spec:
     - kind: Rule
       match: Host(`argo.audryus.arpa`)
       services:
-        - name: argo-workflows-server
+        - name: argo-server
           port: 2746
           kind: Service
           scheme: http
@@ -30,7 +30,7 @@ spec:
       match: Host(`argo.audryus.arpa`)
       priority: 10
       services:
-        - name: argo-workflows-server
+        - name: argo-server
           port: 2746
           scheme: http
       middlewares:
