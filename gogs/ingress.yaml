@@ -1,0 +1,37 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: gogs
+  namespace: gogs
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`gogs.audryus.arpa`)
+      services:
+        - name: gogs-svc
+          port: 18080
+          scheme: http
+  tls:
+    secretName: tls-gogs
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: gogs-http
+  namespace: gogs
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`gogs.audryus.arpa`) 
+      priority: 10
+      services:
+        - name: gogs-svc
+          port: 18080
+          scheme: http
+      middlewares:
+        - name: redirecttohttps
+          

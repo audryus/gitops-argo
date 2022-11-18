@@ -29,5 +29,5 @@ spec:
                         tasks:
                         - name: build
                           templateRef:
-                            name: delightful-python
-                            template: argosay
+                            name: ubiquitous-spoon
+                            template: build

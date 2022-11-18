@@ -4,3 +4,4 @@ resources:
 - ../../base
 - sealed-secrets.yaml
 - silly-app.yaml
+- gogs.yaml
