@@ -2,9 +2,9 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
   name: strip-prefix
-  namespace: silly-app
+  namespace: ubiquitous-spoon
 spec:
   stripPrefix:
     forceSlash: false
     prefixes:
-      - /silly-app
+      - /ubiquitous-spoon

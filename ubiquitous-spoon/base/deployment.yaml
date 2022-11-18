@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: silly-app
-  namespace: silly-app
+  name: ubiquitous-spoon
+  namespace: ubiquitous-spoon
   labels:
-    app: silly-app
+    app: ubiquitous-spoon
 spec:
   selector:
     matchLabels:
-      app: silly-app
+      app: ubiquitous-spoon
   template:
     metadata:
       labels:
-        app: silly-app
+        app: ubiquitous-spoon
     spec:
       containers:
-      - name: silly-app
-        image: audryus/silly-app:1.0
+      - name: ubiquitous-spoon
+        image: audryus/ubiquitous-spoon:1.0
         ports:
         - containerPort: 8080
         livenessProbe:

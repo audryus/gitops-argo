@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: silly-app
+  name: sensor-ubiquitous-spoon
   namespace: argo-events
 spec:
   template:
@@ -46,6 +46,6 @@ spec:
                           - name: repo_url
                             value: "git://github.com/audryus/ubiquitous-spoon.git"
                           - name: container_image
-                            value: audryus/silly-app
+                            value: audryus/ubiquitous-spoon
                           - name: container_tag
-                            value: "1.5"
+                            value: "1.0"

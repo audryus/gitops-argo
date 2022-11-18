@@ -2,22 +2,22 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: silly-app=audryus/silly-app
-    argocd-image-updater.argoproj.io/silly-app.update-strategy: semver
-    argocd-image-updater.argoproj.io/silly-app.force-update: "true"
-  name: silly-app
+    argocd-image-updater.argoproj.io/image-list: ubiquitous-spoon=audryus/ubiquitous-spoon
+    argocd-image-updater.argoproj.io/ubiquitous-spoon.update-strategy: semver
+    argocd-image-updater.argoproj.io/ubiquitous-spoon.force-update: "true"
+  name: ubiquitous-spoon
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: application
+  project: ubiquitous-spoon
   source:
-    path: silly-app/overlays/dev
+    path: ubiquitous-spoon/overlays/dev
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: silly-app
+    namespace: ubiquitous-spoon
   syncPolicy:
     automated:
       selfHeal: true

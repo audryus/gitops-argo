@@ -1,16 +1,16 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: silly-app
-  namespace: silly-app
+  name: ubiquitous-spoon
+  namespace: ubiquitous-spoon
 spec:
   entryPoints:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`apps.audryus.arpa`) && PathPrefix(`/silly-app`) 
+      match: Host(`apps.audryus.arpa`) && PathPrefix(`/ubiquitous-spoon`) 
       services:
-        - name: silly-app
+        - name: ubiquitous-spoon
           port: 8080
           scheme: http
       middlewares:
@@ -21,17 +21,17 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: silly-app-http
-  namespace: silly-app
+  name: ubiquitous-spoon-http
+  namespace: ubiquitous-spoon
 spec:
   entryPoints:
     - web
   routes:
     - kind: Rule
-      match: Host(`apps.audryus.arpa`) && PathPrefix(`/silly-app`) 
+      match: Host(`apps.audryus.arpa`) && PathPrefix(`/ubiquitous-spoon`) 
       priority: 10
       services:
-        - name: silly-app
+        - name: ubiquitous-spoon
           port: 8080
           scheme: http
       middlewares:
