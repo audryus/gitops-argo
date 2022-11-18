@@ -23,6 +23,10 @@ spec:
           value: git.audryus.arpa
         - name: 'ingress.tls[0].secretName'
           value: 'chart-example-tls'
+        - name: 'gitea.additionalConfigFromEnvs[0].name'
+          value: 'ENV_TO_INI__WEBHOOK__ALLOWED_HOST_LIST'
+        - name: 'gitea.additionalConfigFromEnvs[0].value'
+          value: '*'
   project: gitea
   syncPolicy:
     automated:
