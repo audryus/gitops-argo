@@ -30,6 +30,7 @@ spec:
                         - key: "config.json"
                           path: config.json
                 entrypoint: build
+                serviceAccountName: operate-workflow-sa
                 templates:
                   - name: build
                     dag:
