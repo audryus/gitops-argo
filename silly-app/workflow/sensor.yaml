@@ -37,4 +37,4 @@ spec:
                         - name: build
                           templateRef:
                             name: ubiquitous-spoon
-                            template: argosay
+                            template: build
