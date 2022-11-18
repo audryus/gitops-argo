@@ -4,7 +4,7 @@ metadata:
   name: container-image
   namespace: argo
 spec:
-  serviceAccountName: workflow
+  serviceAccountName: operate-workflow-sa
   templates:
   - name: build-kaniko-git
     inputs:
