@@ -21,6 +21,7 @@ spec:
               kind: Workflow
               metadata:
                 generateName: ubiquitous-spoon-
+                namespace: argo-events
               spec:
                 volumes:
                   - name: docker-config
@@ -47,4 +48,4 @@ spec:
                           - name: container_image
                             value: audryus/silly-app
                           - name: container_tag
-                            value: "1.3"
+                            value: "1.4"
