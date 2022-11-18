@@ -3,14 +3,14 @@
   "apiVersion": "bitnami.com/v1alpha1",
   "metadata": {
     "name": "docker-config",
-    "namespace": "default",
+    "namespace": "argo-events",
     "creationTimestamp": null
   },
   "spec": {
     "template": {
       "metadata": {
         "name": "docker-config",
-        "namespace": "default",
+        "namespace": "argo-events",
         "creationTimestamp": null
       }
     },
