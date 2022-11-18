@@ -6,6 +6,13 @@ metadata:
 spec:
   template:
     serviceAccountName: operate-workflow-sa
+    volumes:
+      - name: docker-config
+        secret:
+          secretName: docker-config
+          items:
+            - key: "config.json"
+              path: config.json
   dependencies:
     - name: test-dep
       eventSourceName: webhook
