@@ -22,12 +22,6 @@ spec:
               metadata:
                 generateName: ubiquitous-spoon-
               spec:
-                entrypoint: build
-                templates:
-                    - name: build
-                      dag:
-                        tasks:
-                        - name: build
-                          templateRef:
-                            name: ubiquitous-spoon
-                            template: build
+                workflowTemplateRef: 
+                  name: ubiquitous-spoon
+
