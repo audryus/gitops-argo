@@ -48,4 +48,4 @@ spec:
                           - name: container_image
                             value: audryus/silly-app
                           - name: container_tag
-                            value: "1.4"
+                            value: "1.5"
