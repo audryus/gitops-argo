@@ -9,4 +9,6 @@ resources:
 - event-source.yaml
 bases:
 - github.com/argoproj/argo-events/manifests/cluster-install
+patches:
+- rbac.yaml
 namespace: argo-events
