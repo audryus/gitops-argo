@@ -21,7 +21,7 @@ spec:
     - template:
         name: argo-workflow-trigger
         argoWorkflow:
-          operation: submit
+          operation: submit-from
           source:
             resource:
               apiVersion: argoproj.io/v1alpha1
