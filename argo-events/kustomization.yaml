@@ -8,5 +8,5 @@ resources:
 - templates.yaml
 - event-source.yaml
 bases:
-- github.com/argoproj/argo-events/manifests/cluster-install
+- github.com/argoproj/argo-events/manifests/namespace-install
 namespace: argo-events
