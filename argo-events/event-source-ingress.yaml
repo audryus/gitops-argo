@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: webhook-http
+  namespace: argo-events
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`webhook.audryus.arpa`)
+      priority: 10
+      services:
+        - name: webhook-eventsource-svc
+          port: 12000
+          scheme: http
+      
