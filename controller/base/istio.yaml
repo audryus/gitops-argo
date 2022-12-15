@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sealed-secrets
+  name: istio
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: sealed-secrets
+  project: istio
   source:
-    path: sealed-secrets
+    path: istio
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:
-    namespace: kube-system
+    namespace: argocd
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
