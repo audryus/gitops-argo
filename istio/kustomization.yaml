@@ -6,4 +6,3 @@ resources:
 - istio-base.yaml
 - istio-discovery.yaml
 - gateway.yaml
-- argo-route.yaml
