@@ -4,4 +4,4 @@ resources:
 - ../../base
 - sealed-secrets.yaml
 - ubiquitous-spoon.yaml
-- gitea.yaml
+#- gitea.yaml
