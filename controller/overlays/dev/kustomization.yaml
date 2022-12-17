@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
 - ../../base
 - sealed-secrets.yaml
-- github.com/audryus/istio/overlay/dev
+- github.com/audryus/gitops-argo/istio/overlays/dev
 #- ubiquitous-spoon.yaml
 #- gitea.yaml

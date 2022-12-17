@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio
+  name: Sky Walking
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: istio
+  project: skywalking
   source:
-    path: istio
+    path: skywalking/overlays/dev
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:
-    namespace: argocd
+    namespace: kube-system
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
