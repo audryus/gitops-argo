@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
 - cert.yaml
 - gateway.yaml
-patchesStrategicMerge:
-- gateway-patch.yaml
+namespace: istio-system
