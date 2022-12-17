@@ -8,4 +8,5 @@ resources:
 - kibana.yaml
 - agents.yaml
 - apmserver.yaml
+- route.yaml
 namespace: elastic-system
