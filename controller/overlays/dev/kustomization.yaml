@@ -4,5 +4,6 @@ resources:
 - ../../base
 - github.com/audryus/gitops-argo/istio
 - gateway-api.yaml
+- gateway-api-patch.yaml
 #- ubiquitous-spoon.yaml
 #- gitea.yaml
