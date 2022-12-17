@@ -15,8 +15,6 @@ spec:
     namespace: elastic-system
     server: https://kubernetes.default.svc
   syncPolicy:
-    automated:
-      selfHeal: true
-      prune: true
+    automated: null
     syncOptions:
     - CreateNamespace=true
