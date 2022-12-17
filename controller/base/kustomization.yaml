@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - projects.yaml
 - prometheus.yaml
+- metrics-server.yaml
 #- argo-workflows.yaml
 #- argo-events.yaml
 #- istio.yaml
