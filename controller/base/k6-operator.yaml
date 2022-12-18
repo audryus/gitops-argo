@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sealed-secrets
+  name: k6-operator-manager
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: sealed-secrets
+  project: k6-operator
   source:
-    path: sealed-secrets
+    path: k6-operator/manager
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:
-    namespace: kube-system
+    namespace: k6-operator-system
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
