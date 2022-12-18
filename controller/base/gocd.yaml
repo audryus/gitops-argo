@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: go-cd
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: gocd
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://gocd.github.io/helm-chart'
+    targetRevision: 2.0.1
+    chart: gocd
+  project: go-cd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
