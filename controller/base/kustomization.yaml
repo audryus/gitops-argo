@@ -6,7 +6,6 @@ resources:
 #- prometheus.yaml
 #- metrics-server.yaml
 #- elastic-eck.yaml
-- k6-crd.yaml
 - k6-operator.yaml
 #- argo-workflows.yaml
 #- argo-events.yaml
