@@ -13,6 +13,10 @@ spec:
     repoURL: 'https://gocd.github.io/helm-chart'
     targetRevision: 2.0.1
     chart: gocd
+    helm:
+      parameters:
+        - name: server.ingress.enabled
+          value: 'false'
   project: go-cd
   syncPolicy:
     automated:
