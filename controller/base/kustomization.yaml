@@ -7,7 +7,7 @@ resources:
 - metrics-server.yaml
 - github.com/audryus/gitops-argo/istio
 #- elastic-eck.yaml
-- k6-operator.yaml
-- github.com/audryus/gitops-argo/go-cd
+#- k6-operator.yaml
+#- github.com/audryus/gitops-argo/go-cd
 #- argo-workflows.yaml
 #- argo-events.yaml
