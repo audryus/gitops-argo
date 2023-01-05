@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ubiquitous-spoon
-        image: audryus/ubiquitous-spoon:3842197910
+        image: audryus/ubiquitous-spoon:3842908028
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
