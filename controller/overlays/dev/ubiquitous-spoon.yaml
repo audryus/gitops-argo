@@ -1,10 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: ubiquitous-spoon=audryus/ubiquitous-spoon
-    argocd-image-updater.argoproj.io/ubiquitous-spoon.update-strategy: semver
-    argocd-image-updater.argoproj.io/ubiquitous-spoon.force-update: "true"
   name: ubiquitous-spoon
   namespace: argocd
   finalizers:
