@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ubiquitous-spoon
-        image: audryus/ubiquitous-spoon:1.0
+        image: audryus/ubiquitous-spoon:3842908028
         ports:
         - containerPort: 8080
         livenessProbe:
