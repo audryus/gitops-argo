@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubiquitous-spoon
+  namespace: ubiquitous-spoon
+  labels:
+    app: ubiquitous-spoon
+spec:
+  selector:
+    matchLabels:
+      app: ubiquitous-spoon
+  template:
+    metadata:
+      labels:
+        app: ubiquitous-spoon
+    spec:
+      containers:
+      - name: ubiquitous-spoon
+        image: audryus/ubiquitous-spoon:1.0
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /api/v1/healthz
+            port: 8080
+        readinessProbe:
+          httpGet:
+            path: /api/v1/healthz
+            port: 8080
+        resources:
+          limits:
+            cpu: 100m
+            memory: 256Mi
+          requests:
+            cpu: 80m
+            memory: 128Mi
