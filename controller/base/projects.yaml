@@ -33,7 +33,7 @@ spec:
   - '*'
   destinations:
   - namespace: '*'
-    server: https://kubernetes.default.svc
+    name: oci-cluster
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
@@ -87,27 +87,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: sealed-secrets
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  description: Sealed Secrets Project
-  sourceRepos:
-  - '*'
-  destinations:
-  - namespace: '*'
-    server: https://kubernetes.default.svc
-  clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
----
-apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: oci-sealed-secrets
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

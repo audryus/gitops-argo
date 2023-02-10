@@ -3,17 +3,19 @@ kind: Application
 metadata:
   name: argo-rollouts
   namespace: argocd
+  labels:
+    name: oci
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: argo
   source:
-    path: argo-rollouts/overlays/dev
+    path: argo-rollouts/overlays/oci
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:
     namespace: argo-rollouts
-    server: https://kubernetes.default.svc
+    name: oci-cluster
   syncPolicy:
     automated:
       selfHeal: true
