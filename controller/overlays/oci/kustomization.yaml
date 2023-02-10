@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 #- sealed-secrets.yaml
 #- argo-rollouts.yaml
+- ubiquitous-spoon.yaml
