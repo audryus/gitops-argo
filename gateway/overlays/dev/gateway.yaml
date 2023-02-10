@@ -6,6 +6,12 @@ metadata:
 spec:
   gatewayClassName: istio
   listeners:
+  - name: redis
+    protocol: TCP
+    port: 6379
+    allowedRoutes:
+      namespaces:
+        from: All
   - name: http
     protocol: HTTP
     port: 80
