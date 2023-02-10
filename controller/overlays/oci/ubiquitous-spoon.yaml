@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: oci-ubiquitous-spoon
+  namespace: argocd
+  labels:
+    name: oci
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: oci-ubiquitous-spoon
+  source:
+    path: ubiquitous-spoon/overlays/oci
+    repoURL: https://github.com/audryus/gitops-argo
+    targetRevision: HEAD
+  destination:
+    name: oci-cluster
+    namespace: ubiquitous-spoon
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
