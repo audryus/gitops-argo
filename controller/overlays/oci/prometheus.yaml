@@ -12,7 +12,7 @@ spec:
   - '*'
   destinations:
   - namespace: '*'
-    name: oci-clusteer
+    name: oci-cluster
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
