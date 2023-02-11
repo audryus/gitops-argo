@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
 #- sealed-secrets.yaml
 - metrics-server.yaml
+- prometheus.yaml
 - argo-rollouts.yaml
 #- ubiquitous-spoon.yaml
