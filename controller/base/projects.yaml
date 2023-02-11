@@ -220,9 +220,6 @@ spec:
   description: Metrics Server Project
   sourceRepos:
   - '*'
-  destinations:
-  - namespace: '*'
-    server: https://kubernetes.default.svc
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
