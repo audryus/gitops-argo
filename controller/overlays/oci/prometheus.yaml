@@ -35,7 +35,7 @@ spec:
     targetRevision: HEAD
   destination:
     namespace: monitoring
-    name: oci-clusteer
+    name: oci-cluster
   syncPolicy:
     automated:
       selfHeal: true
