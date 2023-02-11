@@ -1,0 +1,44 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: oci-gateway-api
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Gateway API Project
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: '*'
+    name: oci-cluster
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: oci-gateway-api
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: oci-gateway-api
+  source:
+    path: gateway/overlays/oci
+    repoURL: https://github.com/audryus/gitops-argo
+    targetRevision: HEAD
+  destination:
+    namespace: istio-system
+    name: oci-cluster
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
