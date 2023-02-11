@@ -1,8 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metrics-server
+  name: oci-metrics-server
   namespace: argocd
+  labels:
+    name: oci
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
