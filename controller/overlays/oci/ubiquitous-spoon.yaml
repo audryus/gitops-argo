@@ -1,3 +1,25 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: oci-ubiquitous-spoon
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Ubiquitous Spoon Project
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: '*'
+    name: oci-cluster
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
