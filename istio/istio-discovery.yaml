@@ -12,6 +12,12 @@ spec:
     repoURL: 'https://istio-release.storage.googleapis.com/charts'
     targetRevision: 1.16.0
     chart: istiod
+    helm: 
+      values: |
+        meshConfig:
+          defaultConfig:
+            discoveryAddress: istiod.istio-system.svc:15012
+          enableTracing: true
   destination:
     namespace: istio-system
     server: https://kubernetes.default.svc
