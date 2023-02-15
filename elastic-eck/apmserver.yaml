@@ -4,8 +4,10 @@ metadata:
   name: apm-server
   namespace: elastic-system
 spec:
-  version: 8.5.3
+  version: 8.6.1
   count: 1
   elasticsearchRef:
     name: elasticsearch
+  kibanaRef:
+    name: kibana
 
