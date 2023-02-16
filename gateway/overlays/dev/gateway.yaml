@@ -1,3 +1,4 @@
+---
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: Gateway
 metadata:
@@ -30,7 +31,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   labels:
-    app: istio-gateway
+    app: istio-gateway-istio
     istio: gateway
   name: istio-gateway
   namespace: istio-system
@@ -47,4 +48,4 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: istio-gateway
+    name: istio-gateway-istio
