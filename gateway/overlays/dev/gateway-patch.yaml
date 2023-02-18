@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: istio-gateway
+  name: istio-gateway-istio
   namespace: istio-system
 spec:
   template:
