@@ -30,7 +30,7 @@ metadata:
 spec:
   project: jaeger
   source:
-    path: istio/grafana
+    path: istio/jaeger
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:
