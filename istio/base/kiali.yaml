@@ -94,9 +94,12 @@ data:
         enabled: true
       istio:
         root_namespace: istio-system
+      prometheus:
+        url: "http://prometheus-server.monitoring/"
       grafana:
         enabled: true
-        in_cluster_url: 'http://grafana.istio-system:3000/'
+        in_cluster_url: "http://grafana.istio-system:3000/"
+        url: "https://grafana.audryus.arpa/"
     identity:
       cert_file: ""
       private_key_file: ""
@@ -119,8 +122,7 @@ data:
     login_token:
       signing_key: CHANGEME00000000
     server:
-      metrics_enabled: true
-      metrics_port: 9090
+      metrics_enabled: false
       port: 20001
       web_root: /kiali
 ...
@@ -417,10 +419,6 @@ spec:
     appProtocol: http
     protocol: TCP
     port: 20001
-  - name: http-metrics
-    appProtocol: http
-    protocol: TCP
-    port: 9090
   selector:
     app.kubernetes.io/name: kiali
     app.kubernetes.io/instance: kiali
@@ -467,8 +465,6 @@ spec:
         sidecar.istio.io/inject: "false"
       annotations:
         checksum/config: 5e12b1fe7570b2a02cc31a11fa5c48ebfea7ec7328ce1a7ed9d8701fd107f4a8
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "9090"
         kiali.io/dashboards: go,kiali
     spec:
       serviceAccountName: kiali
@@ -491,8 +487,6 @@ spec:
         ports:
         - name: api-port
           containerPort: 20001
-        - name: http-metrics
-          containerPort: 9090
         readinessProbe:
           httpGet:
             path: /kiali/healthz
