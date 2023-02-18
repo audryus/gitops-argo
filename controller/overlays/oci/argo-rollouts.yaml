@@ -1,10 +1,30 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: argo
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Argo Project
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: '*'
+    name: oci-cluster
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-rollouts
   namespace: argocd
-  labels:
-    name: oci
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
