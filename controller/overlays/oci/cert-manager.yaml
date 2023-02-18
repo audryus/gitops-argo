@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: cert-managar
+  name: cert-manager
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -23,18 +23,18 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-managar
+  name: cert-manager
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: cert-managar
+  project: cert-manager
   source:
-    path: cert-managar
+    path: cert-manager
     repoURL: https://github.com/audryus/gitops-argo
     targetRevision: HEAD
   destination:
-    namespace: cert-managar
+    namespace: cert-manager
     name: oci-cluster
   syncPolicy:
     automated:
