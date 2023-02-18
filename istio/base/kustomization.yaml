@@ -4,5 +4,5 @@ resources:
 - namespace.yaml
 - grafana.yaml
 - jaeger.yaml
-- kiali.yaml
+#- kiali.yaml
 namespace: istio-system
