@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - prometheus.yaml
-- github.com/audryus/gitops-argo/istio
+- github.com/audryus/gitops-argo/istio/overlays/dev
 - gateway-api.yaml
 - ubiquitous-spoon.yaml
 #- gitea.yaml
