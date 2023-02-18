@@ -7,8 +7,22 @@ spec:
   parentRefs:
   - name: istio-gateway
     namespace: istio-system
-  hostnames: ["grafana.localdev.arpa"]
+  hostnames: ["grafana.audryus.arpa"]
   rules:
+    - matches:
+      - headers:
+          - name: X-Forwarded-Proto
+            value: http
+      filters:
+      - type: RequestRedirect
+        requestRedirect:
+          scheme: https
+          statusCode: 301
+          port: 443
+      backendRefs:
+      - name: grafana
+        weight: 1
+        port: 3000
     - backendRefs:
       - name: grafana
         weight: 1
