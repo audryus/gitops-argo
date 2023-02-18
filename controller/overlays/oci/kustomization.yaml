@@ -4,5 +4,5 @@ resources:
 - sealed-secrets.yaml
 - prometheus.yaml
 #- argo-rollouts.yaml
-- github.com/audryus/gitops-argo/istio/overlays/oci
-- ubiquitous-spoon.yaml
+#- github.com/audryus/gitops-argo/istio/overlays/oci
+#- ubiquitous-spoon.yaml
