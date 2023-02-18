@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - grafana.yaml
-- kiali.yaml
+#- kiali.yaml
