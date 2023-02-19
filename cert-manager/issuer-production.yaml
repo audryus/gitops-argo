@@ -13,7 +13,7 @@ spec:
     privateKeySecretRef:
       name: production-cluster-issuer
     solvers:
-    - http01:
+    - dns01:
         gatewayHTTPRoute:
           parentRefs:
           - kind: Gateway
