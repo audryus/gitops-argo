@@ -6,6 +6,7 @@ metadata:
   namespace: cert-manager
 spec:
   acme:
+    email: audryus@gmail.com
     # Staging Environment: must be used for testing before using prod env
     # Letsencrypt has a strict rate limit.
     server: https://acme-staging-v02.api.letsencrypt.org/directory
