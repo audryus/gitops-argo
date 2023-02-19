@@ -2,11 +2,11 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: tls-apps
-  namespace: cert-manager
+  namespace: istio-system
 spec:
   secretName: tls-apps
   issuerRef:
-    name: staging-cluster-issuer
+    name: cluster-issuer
     kind: ClusterIssuer
   dnsNames:
     - "*.19871506.xyz"
