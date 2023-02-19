@@ -12,7 +12,7 @@ spec:
   - '*'
   destinations:
   - namespace: '*'
-    server: https://kubernetes.default.svc
+    name: oci-cluster
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
