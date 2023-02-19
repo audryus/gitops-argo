@@ -12,7 +12,7 @@ spec:
     privateKeySecretRef:
       name: staging-cluster-issuer
     solvers:
-    - http01:
+    - dns01:
         gatewayHTTPRoute:
           parentRefs:
           - kind: Gateway

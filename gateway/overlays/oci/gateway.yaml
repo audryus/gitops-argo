@@ -28,7 +28,7 @@ spec:
       certificateRefs:
       - kind: Secret
         group: ""
-        name: tls-apps
+        name: staging-cluster-issuer
 --- 
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
