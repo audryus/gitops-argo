@@ -10,26 +10,14 @@ spec:
   source:
     path: ''
     repoURL: 'https://istio-release.storage.googleapis.com/charts'
-    targetRevision: 1.16.0
+    targetRevision: 1.17.0
     chart: istiod
     helm: 
       values: |
         meshConfig:
-          defaultProviders:
-            tracing:
-            - "skywalking"
           defaultConfig:
             discoveryAddress: istiod.istio-system.svc:15012
-            proxyMetadata: {}
-            tracing:
-              zipkin:
-                address: zipkin.istio-system:9411
           enableTracing: true
-          extensionProviders:
-            - name: "skywalking"
-              skywalking:
-                service: skywalking-oap.istio-system.svc.cluster.local
-                port: 11800
   destination:
     namespace: istio-system
     name: oci-cluster
