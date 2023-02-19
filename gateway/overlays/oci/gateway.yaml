@@ -5,7 +5,7 @@ metadata:
   name: istio-gateway
   namespace: istio-system
   annotations:
-    cert-manager.io/cluster-issuer: cluster-issuer
+    cert-manager.io/cluster-issuer: production-cluster-issuer
 spec:
   gatewayClassName: istio
   listeners:
@@ -28,7 +28,7 @@ spec:
       certificateRefs:
       - kind: Secret
         group: ""
-        name: tls-apps
+        name: production-cluster-issuer
 --- 
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
