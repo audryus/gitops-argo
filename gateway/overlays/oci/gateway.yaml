@@ -16,6 +16,19 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
+  - name: wildcard-https
+    protocol: HTTPS
+    port: 443
+    hostname: "*.19871506.xyz"
+    allowedRoutes:
+      namespaces:
+        from: All
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - kind: Secret
+        group: ""
+        name: 19871506-xyz-issuer
 --- 
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
