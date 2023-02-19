@@ -7,5 +7,6 @@ resources:
 - github.com/audryus/gitops-argo/istio/overlays/oci
 - grafana.yaml
 - jaeger.yaml
-#- kiali.yaml
+- kiali.yaml
+- gateway-api.yaml
 #- ubiquitous-spoon.yaml
