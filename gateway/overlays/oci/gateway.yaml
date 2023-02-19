@@ -28,7 +28,7 @@ spec:
       certificateRefs:
       - kind: Secret
         group: ""
-        name: 19871506-xyz-issuer
+        name: tls-apps
 --- 
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler

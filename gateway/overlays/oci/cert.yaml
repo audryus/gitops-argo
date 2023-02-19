@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: tls-apps
   issuerRef:
-    name: cluster-issuer
+    name: staging-cluster-issuer
     kind: ClusterIssuer
   dnsNames:
-    - "*.audryus.arpa"
+    - "*.19871506.xyz"
