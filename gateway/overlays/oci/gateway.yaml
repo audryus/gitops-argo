@@ -5,7 +5,7 @@ metadata:
   name: istio-gateway
   namespace: istio-system
   annotations:
-    cert-manager.io/cluster-issuer: staging-cluster-issuer
+    cert-manager.io/cluster-issuer: cluster-issuer
 spec:
   gatewayClassName: istio
   listeners:
