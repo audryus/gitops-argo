@@ -13,9 +13,16 @@ spec:
     privateKeySecretRef:
       name: production-cluster-issuer
     solvers:
-    - dns01:
-        gatewayHTTPRoute:
-          parentRefs:
-          - kind: Gateway
-            name: istio-gateway
-            namespace: istio-system
+    - selector:
+        dnsNames:
+        - '*.19871506.xyz'
+      dns01:
+        webhook:
+          config:
+            apiKeySecretRef:
+              name: godaddy-api-key
+              key: token
+            production: true
+            ttl: 600
+          groupName: acme.19871506.xyz
+          solverName: godaddy
