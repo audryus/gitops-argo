@@ -9,4 +9,4 @@ resources:
 - jaeger.yaml
 - kiali.yaml
 - gateway-api.yaml
-#- ubiquitous-spoon.yaml
+- ubiquitous-spoon.yaml
