@@ -11,7 +11,7 @@ spec:
     - matches:
       - path:
           type: PathPrefix
-          value: "/ubiquitous-spoon/"
+          value: "/ubiquitous-spoon"
       filters:
       - type: URLRewrite
         urlRewrite:
