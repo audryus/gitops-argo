@@ -10,7 +10,7 @@ spec:
   rules:
     - matches:
       - path:
-          type: RegularExpression
+          type: PathPrefix
           value: "/ubiquitous-spoon"
       filters:
       - type: URLRewrite
