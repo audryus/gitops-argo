@@ -30,7 +30,7 @@ spec:
         urlRewrite:
           path:
             type: ReplacePrefixMatch
-            replacePrefixMatch: "/"
+            replacePrefixMatch: "/s"
       backendRefs:
       - name: ubiquitous-spoon
         port: 80
