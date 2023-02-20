@@ -6,7 +6,7 @@ spec:
   parentRefs:
   - name: istio-gateway
     namespace: istio-system
-  hostnames: ["*.audryus.arpa"]
+  hostnames: ["lero.audryus.arpa"]
   rules:
     - matches:
       - path:
