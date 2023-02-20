@@ -10,8 +10,14 @@ spec:
   rules:
     - matches:
       - path:
-          type: RegularExpression
-          value: "/ubiquitous-spoon/(.*)"
+          type: PathPrefix
+          value: "/ubiquitous-spoon/"
+      filters:
+      - type: URLRewrite
+        urlRewrite:
+          path:
+            type: ReplacePrefixMatch
+            replacePrefixMatch: "/"
       backendRefs:
       - name: ubiquitous-spoon
         port: 80
