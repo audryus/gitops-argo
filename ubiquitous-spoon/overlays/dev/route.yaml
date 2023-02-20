@@ -10,7 +10,7 @@ spec:
   rules:
     - matches:
       - path:
-          type: PathPrefix
+          type: Exact
           value: /ubiquitous-spoon/
       filters:
       - type: URLRewrite
@@ -23,7 +23,7 @@ spec:
         port: 80
     - matches:
       - path:
-          type: PathPrefix
+          type: Exact
           value: /ubiquitous-spoon
       filters:
       - type: URLRewrite
