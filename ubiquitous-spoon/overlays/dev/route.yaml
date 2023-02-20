@@ -8,11 +8,7 @@ spec:
     namespace: istio-system
   hostnames: ["audryus.arpa"]
   rules:
-    - matches:
-      - path:
-          type: PathPrefix
-          value: /ubiquitous-spoon
-      backendRefs:
+    -  backendRefs:
       - name: ubiquitous-spoon
         weight: 1
         port: 80
