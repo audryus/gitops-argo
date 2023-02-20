@@ -12,23 +12,6 @@ spec:
       - path:
           type: PathPrefix
           value: /ubiquitous-spoon
-      - headers:
-          - name: X-Forwarded-Proto
-            value: http
-      filters:
-      - type: RequestRedirect
-        requestRedirect:
-          scheme: https
-          statusCode: 301
-          port: 443
-      backendRefs:
-      - name: ubiquitous-spoon
-        weight: 1
-        port: 80
-    - matches:
-      - path:
-          type: PathPrefix
-          value: /ubiquitous-spoon
       backendRefs:
       - name: ubiquitous-spoon
         weight: 1
