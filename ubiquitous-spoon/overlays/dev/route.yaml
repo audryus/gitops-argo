@@ -16,10 +16,9 @@ spec:
       filters:
       - type: URLRewrite
         urlRewrite:
-          hostname: ubiquitous-spoon.audryus.arpa
           path:
             type: ReplacePrefixMatch
-            replacePrefixMatch: "‎"
+            replacePrefixMatch: "/"
       backendRefs:
       - name: ubiquitous-spoon
         port: 80
