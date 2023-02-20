@@ -10,15 +10,27 @@ spec:
   rules:
     - matches:
       - path:
-          type: Exact
+          type: PathPrefix
           value: /ubiquitous-spoon/
+      filters:
+      - type: URLRewrite
+        urlRewrite:
+          path:
+            type: ReplacePrefixMatch
+            replacePrefixMatch: ""
       backendRefs:
       - name: ubiquitous-spoon
         port: 80
     - matches:
       - path:
-          type: Exact
+          type: PathPrefix
           value: /ubiquitous-spoon
+      filters:
+      - type: URLRewrite
+        urlRewrite:
+          path:
+            type: ReplacePrefixMatch
+            replacePrefixMatch: ""
       backendRefs:
       - name: ubiquitous-spoon
         port: 80
