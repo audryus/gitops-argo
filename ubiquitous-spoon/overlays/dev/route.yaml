@@ -21,16 +21,3 @@ spec:
       backendRefs:
       - name: ubiquitous-spoon
         port: 80
-    - matches:
-      - path:
-          type: PathPrefix
-          value: "/ubiquitous-spoon"
-      filters:
-      - type: URLRewrite
-        urlRewrite:
-          path:
-            type: ReplacePrefixMatch
-            replacePrefixMatch: "/s"
-      backendRefs:
-      - name: ubiquitous-spoon
-        port: 80
