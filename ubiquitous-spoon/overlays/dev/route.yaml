@@ -12,11 +12,6 @@ spec:
       - path:
           type: PathPrefix
           value: /ubiquitous-spoon
-      filters:
-        - type: URLRewrite
-          urlRewrite:
-            path:
-            replacePrefixMatch: /fennel
       backendRefs:
       - name: ubiquitous-spoon
         weight: 1
