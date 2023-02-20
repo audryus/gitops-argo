@@ -6,9 +6,12 @@ spec:
   parentRefs:
   - name: istio-gateway
     namespace: istio-system
-  hostnames: ["ubiquitous-spoon.audryus.arpa"]
+  hostnames: ["audryus.arpa"]
   rules:
     - matches:
+      - path:
+          type: PathPrefix
+          value: /ubiquitous-spoon
       - headers:
           - name: X-Forwarded-Proto
             value: http
@@ -22,7 +25,11 @@ spec:
       - name: ubiquitous-spoon
         weight: 1
         port: 80
-    - backendRefs:
+    - matches:
+      - path:
+          type: PathPrefix
+          value: /ubiquitous-spoon
+      backendRefs:
       - name: ubiquitous-spoon
         weight: 1
         port: 80
