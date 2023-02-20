@@ -11,13 +11,13 @@ spec:
     - matches:
       - path:
           type: PathPrefix
-          value: "/ubiquitous-spoon/"
+          value: "/ubiquitous-spoon"
       filters:
       - type: URLRewrite
         urlRewrite:
           path:
             type: ReplacePrefixMatch
-            replacePrefixMatch: "/"
+            replacePrefixMatch: ""
       backendRefs:
       - name: ubiquitous-spoon
         port: 80
