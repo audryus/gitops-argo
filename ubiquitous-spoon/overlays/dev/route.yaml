@@ -13,11 +13,11 @@ spec:
           type: PathPrefix
           value: "/ubiquitous-spoon"
       filters:
-      - type: RequestRedirect
-        requestRedirect:
+      - type: URLRewrite
+        urlRewrite:
           path:
-            type: ReplaceFullPath
-            replaceFullPath: "/ubiquitous-spoon"
+            type: ReplacePrefixMatch
+            replacePrefixMatch: "/lero"
       backendRefs:
       - name: ubiquitous-spoon
         port: 80
