@@ -8,4 +8,4 @@ resources:
 - kiali.yaml
 - grafana.yaml
 - jaeger.yaml
-#- ubiquitous-spoon.yaml
+- ubiquitous-spoon.yaml
