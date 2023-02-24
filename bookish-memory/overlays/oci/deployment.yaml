@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: bookish-memory
-        image: audryus/bookish-memory:arm64
+        image: audryus/bookish-memory:4261805481
         ports:
         - containerPort: 80
         livenessProbe:
