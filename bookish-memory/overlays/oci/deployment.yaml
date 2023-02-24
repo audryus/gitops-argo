@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookish-memory
+  namespace: bookish-memory
+  labels:
+    app: bookish-memory
+spec:
+  selector:
+    matchLabels:
+      app: bookish-memory
+  template:
+    metadata:
+      labels:
+        app: bookish-memory
+    spec:
+      containers:
+      - name: bookish-memory
+        image: audryus/bookish-memory:arm64
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+        resources:
+          limits:
+            cpu: 100m
+            memory: 256Mi
+          requests:
+            cpu: 80m
+            memory: 128Mi
