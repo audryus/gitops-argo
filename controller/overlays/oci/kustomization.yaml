@@ -10,3 +10,4 @@ resources:
 - kiali.yaml
 - gateway-api.yaml
 - ubiquitous-spoon.yaml
+- bookish-memory.yaml

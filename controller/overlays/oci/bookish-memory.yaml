@@ -1,0 +1,44 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: oci-bookish-memory
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Bookish Memory Project
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: '*'
+    name: oci-cluster
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: oci-bookish-memory
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: oci-bookish-memory
+  source:
+    path: bookish-memory/overlays/oci
+    repoURL: https://github.com/audryus/gitops-argo
+    targetRevision: HEAD
+  destination:
+    namespace: bookish-memory
+    name: oci-cluster
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
