@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: authentik
+spec:
+  destination:
+    name: ''
+    namespace: authentik
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://charts.goauthentik.io'
+    targetRevision: 2023.8.3
+    chart: authentik
+    helm:
+      parameters:
+        - name: 'ingress.hosts[0].host'
+          value: authentik.audryus.arpa
+        - name: postgresql.enabled
+          value: 'true'
+        - name: postgresql.postgresqlPassword
+          value: glF0KW61j1kwuD9I5aR7Hv7a2wmf8xOoyoz9E79gz7KM5UL4BA
+        - name: redis.enabled
+          value: 'true'
+        - name: authentik.secret_key
+          value: glF0KW61j1kwuD9I5aR7Hv7a2wmf8xOoyoz9E79gz7KM5UL4BA
+        - name: authentik.postgresql.password
+          value: glF0KW61j1kwuD9I5aR7Hv7a2wmf8xOoyoz9E79gz7KM5UL4BA
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true

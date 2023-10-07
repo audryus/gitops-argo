@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: authentik-argocd
+  namespace: argocd
+  labels:
+    example: authentik-oauth
+spec:
+  sso:
+    provider: dex
+    dex:
+      config: |
+        connectors:
+        - config:
+            issuer: https://authentik.audryus.arpa/application/o/argocd/
+            clientID: VXZYaARFUFjMzVTqFBmlYAu0oR9WpSdlWbtLmbs9
+            clientSecret: OFFRYnF1bFFzVmxlc2lUTVpaWk1FVm55QVhmUTBOUnRmamZzVjNPRFFNNm5yTWFHclh5MDYySEpET1V4QVo0VEZIa1hQU204TWFlR3RwcHBtVExXQnFIRVFNM0N6TVpUQ213U1dOdXpNdGJVdUhEWHVycDRKN2VuR05qZWZzODY=
+            insecureEnableGroups: true
+            scopes:
+              - openid
+              - profile
+              - email
+              - groups
+          name: authentik
+          type: oidc
+          id: authentik

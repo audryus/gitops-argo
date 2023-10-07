@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  url: "https://argocd.audryus.arpa"
+  dex.config: |
+    connectors:
+    - config:
+        issuer: http://authentik.audryus.arpa/application/o/argocd/
+        clientID: VXZYaARFUFjMzVTqFBmlYAu0oR9WpSdlWbtLmbs9
+        clientSecret: 8QQbqulQsVlesiTMZZZMEVnyAXfQ0NRtfjfsV3ODQM6nrMaGrXy062HJDOUxAZ4TFHkXPSm8MaeGtpppmTLWBqHEQM3CzMZTCmwSWNuzMtbUuHDXurp4J7enGNjefs86
+        insecureEnableGroups: true
+        scopes:
+          - openid
+          - profile
+          - email
+          - groups
+      name: authentik
+      type: oidc
+      id: authentik
